@@ -1,0 +1,40 @@
+<mat-toolbar>
+  <h1>Filter</h1>
+</mat-toolbar>
+<div fxlayout="row" fxLayout.sm="column" fxLayoutGap="16px">
+  <mat-form-field>
+    <mat-label>Year</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let year of years" [value]='year.key'>{{year.value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Month</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let month of months" [value]='month.key'>{{month.value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div fxlayout="row" fxLayout.sm="column" fxLayoutGap="16px">
+  <div fxFlex="70" fxFlex.lt-sm="100">
+    <mat-card>
+      <mat-card-content>
+        <google-chart [data]="barChart"></google-chart>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex="29" fxFlex.lt-sm="100">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Summary</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+          bred for hunting.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
